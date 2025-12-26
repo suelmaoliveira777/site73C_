@@ -1,0 +1,21 @@
+{
+  "name": "73Creative",
+  "short_name": "73Creative",
+  "description": "Transformamos ideias em experiências digitais inovadoras.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#f8c101",
+  "icons": [
+    {
+      "src": "/images/logo73C_sf.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/logo73C_sf.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
