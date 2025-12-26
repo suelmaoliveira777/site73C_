@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { ArrowRight, Bold } from "lucide-react";
+import { ArrowRight, } from "lucide-react";
 
 
 export function Solutions() {
