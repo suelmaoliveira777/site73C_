@@ -13,7 +13,7 @@ export function Clients() {
     {
       name: "Drª Bianca Saboia",
       company: "Bianca Saboia Advocacia",
-      instagram: "@biancasaboiaadvocacia",
+      instagram: "@bianca_saboia.advogada",
       text: "Equipe extremamente dedicada e criativa. Superaram nossas expectativas em todos os aspectos do projeto.",
       rating: 5
     },
@@ -118,10 +118,17 @@ export function Clients() {
               <div className="pt-4 border-t border-white/10 space-y-1">
                 <p className="text-white">{testimonial.name}</p>
                 <p className="text-gray-400 text-sm">{testimonial.company}</p>
-                <div className="flex items-center gap-2 pt-1">
-                  <Instagram className="w-4 h-4" style={{ color: '#a855f7' }} />
-                  <span className="text-white text-sm">{testimonial.instagram}</span>
-                </div>
+                <a 
+                  href={`https://instagram.com/${testimonial.instagram.replace('@', '')}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 pt-1 hover:opacity-80 transition-opacity cursor-pointer group"
+                >
+                  <Instagram className="w-4 h-4 group-hover:scale-110 transition-transform" style={{ color: '#a855f7' }} />
+                  <span className="text-white text-sm group-hover:text-purple-400 transition-colors">
+                    {testimonial.instagram}
+                  </span>
+                </a>
               </div>
             </div>
           ))}

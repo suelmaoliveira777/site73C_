@@ -60,7 +60,7 @@ export function Navigation() {
           <div className="hidden md:block">
             <Button 
               className="text-black hover:opacity-90 hover:scale-105 transition-all duration-300 shadow-lg shadow-yellow-500/20"
-              style={{ backgroundColor: '#f8c101' }}
+              style={{ backgroundColor: '#f8c101', cursor: 'pointer' }}
             >
               Começe sua jornada
               <Rocket className="ml-2 h-5 w-5" style={{ color: '#a855f7' }} />

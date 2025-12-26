@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Bold } from "lucide-react";
 
 
 export function Solutions() {
@@ -15,9 +15,9 @@ export function Solutions() {
       description: "Automatize processos e otimize a operação da sua empresa com tecnologia avançada."
     },
     {
-      image: "/images/reservas.jpg",
-      title: "Plataforma de Reserva",
-      description: "Solução completa para agendamento online, ideal para diversos segmentos."
+      image: "/images/solutionconnectasite.png",
+      title: "Connecta Sites",
+      description: "Tenha um site profissional, responsivo e fácil de gerenciar, tudo por um custo acessível."
     }
   ];
 
@@ -40,7 +40,8 @@ export function Solutions() {
                 fontWeight: 700,
                 fontFamily: 'var(--font-roboto)',
                 marginBottom: 0,
-                lineHeight: 1.2
+                lineHeight: 1.2,
+                
               }}
             >
               Temos soluções digitais
@@ -94,26 +95,47 @@ export function Solutions() {
                     className="text-white"
                     style={{ 
                       fontSize: 'clamp(1.25rem, 2vw, 1.5rem)',
-                      fontFamily: 'var(--font-roboto)'
+                      fontFamily: 'var(--font-roboto)',
+                      textAlign: 'center',
+                      fontWeight: 700,
+                      background: 'linear-gradient(135deg, #f8c101 0%, #ffffff 50%, #6b7cff 100%)',
+                      WebkitBackgroundClip: 'text',
+                      WebkitTextFillColor: 'transparent',
+                      backgroundClip: 'text',
                     }}
                   >
                     {solution.title}
                   </h3>
-                  <p className="text-gray-300 flex-grow">
+                  <p className="text-gray-300 flex-grow"
+                     style={{ 
+                                           
+                      textAlign: 'center',
+                      
+                    }}
+                  >
                     {solution.description}
                   </p>
 
                   {/* CTA Button */}
-                  <button 
-                    className="w-full px-6 py-3 rounded-lg hover:opacity-90 transition-all duration-300 text-black flex items-center justify-center gap-2 group-hover:gap-3"
-                    style={{ 
-                      backgroundColor: '#f8c101',
-                      fontFamily: 'var(--font-roboto)'
-                    }}
-                  >
-                    Visitar Site
-                    <ArrowRight className="w-5 h-5" />
-                  </button>
+                    <a
+                      href="https://connectasites.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full"
+                    >
+                      <button 
+                        className="w-full px-6 py-3 rounded-lg hover:opacity-90 transition-all duration-300 text-black flex items-center justify-center gap-2 group-hover:gap-3"
+                        style={{ 
+                          backgroundColor: '#f8c101',
+                          fontFamily: 'var(--font-roboto)',
+                          cursor: 'pointer'
+                        }}
+                      >
+                        Visitar Site
+                        <ArrowRight className="w-5 h-5" />
+                      </button>
+                    </a>
+
                 </div>
               </div>
             </motion.div>

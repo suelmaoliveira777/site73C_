@@ -5,10 +5,26 @@ import { Solutions } from "./components/Solutions";
 import { Clients } from "./components/Clients";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
-import { WhatsAppButton } from "./components/WhatsAppButton";
 import { ScrollToTop } from "./components/ScrollToTop";
+import { PrivacyPolicy } from './components/PrivacyPolicy';
+import { useEffect, useState } from 'react';
 
 export default function App() {
+  const [currentPage, setCurrentPage] = useState(() => (typeof window !== 'undefined' && window.location.hash === '#privacy') ? 'privacy' : 'home');
+
+  // Listen to hash changes so opening '#privacy' in a new tab shows the privacy page
+  useEffect(() => {
+    const onHashChange = () => setCurrentPage(window.location.hash === '#privacy' ? 'privacy' : 'home');
+    window.addEventListener('hashchange', onHashChange);
+    return () => window.removeEventListener('hashchange', onHashChange);
+  }, []);
+
+  // Se estiver na página de privacidade, mostra só ela
+  if (currentPage === 'privacy') {
+    return <PrivacyPolicy onBack={() => { setCurrentPage('home'); if (typeof window !== 'undefined' && window.location.hash === '#privacy') { window.history.replaceState(null, '', window.location.pathname + window.location.search); } }} />;
+  }
+
+  // Página principal
   return (
     <div className="relative min-h-screen bg-black">
       {/* Galaxy Parallax Background */}
@@ -61,13 +77,11 @@ export default function App() {
         <Solutions />
         <Clients />
         <Contact />
-        <Footer />
+        <Footer />;
       </div>
-      
-      {/* Floating Buttons */}
-      <WhatsAppButton />
-      <ScrollToTop />
 
+      {/* Floating Buttons */}
+      <ScrollToTop />
     </div>
   );
 }

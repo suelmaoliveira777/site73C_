@@ -1,4 +1,4 @@
-import { Facebook, Twitter, Instagram, Linkedin, Github, Mail, Phone, MapPin } from "lucide-react";
+import { Instagram, Linkedin, Github, Mail, Phone, MapPin } from "lucide-react";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -11,17 +11,13 @@ export function Footer() {
       { label: "Contactos", href: "#contactos" }
     ],
     legal: [
-      { label: "Política de Privacidade", href: "#" },
-      { label: "Termos de Uso", href: "#" },
-      { label: "Cookies", href: "#" },
-      { label: "GDPR", href: "#" }
+      { label: "Política de Privacidade", action: "privacy" }
     ]
   };
 
   const socialLinks = [
-    { icon: <Facebook className="w-5 h-5" />, href: "#", label: "Facebook" },
-    { icon: <Twitter className="w-5 h-5" />, href: "#", label: "Twitter" },
-    { icon: <Instagram className="w-5 h-5" />, href: "#", label: "Instagram" },
+  
+    { icon: <Instagram className="w-5 h-5" />, href: "https://www.instagram.com/73creative.ts/", target: "_blank", rel: "noopener noreferrer", label: "Instagram" },
     { icon: <Linkedin className="w-5 h-5" />, href: "#", label: "LinkedIn" },
     { icon: <Github className="w-5 h-5" />, href: "#", label: "Github" }
   ];
@@ -36,9 +32,10 @@ export function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
           {/* Brand */}
           <div className="lg:col-span-2 space-y-4">
-            <h3 className="text-3xl text-white">
-              73 <span style={{ color: '#f8c101' }}>Creative</span>
-            </h3>
+            <a href="#" className="inline-block">
+              <img src="/images/logo73C_sf.png" alt="73 Creative" className="h-12 lg:h-16 w-auto" />
+            </a>
+
             <p className="text-gray-400 max-w-md">
               Transformamos ideias em experiências digitais inovadoras. 
               Criando o futuro através da tecnologia e criatividade.
@@ -50,6 +47,8 @@ export function Footer() {
                 <a
                   key={index}
                   href={social.href}
+                  target={social.target}
+                  rel={social.rel}
                   aria-label={social.label}
                   className="w-10 h-10 rounded-lg backdrop-blur-sm bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:bg-white/10 transition-colors"
                   style={{
@@ -94,7 +93,7 @@ export function Footer() {
                   className="text-gray-400 transition-colors hover-yellow flex items-center gap-2"
                 >
                   <Mail className="w-4 h-4" />
-                  contato@73creative.pt
+                  73creative.ts@gmail.com
                 </a>
               </li>
               <li>
@@ -103,7 +102,7 @@ export function Footer() {
                   className="text-gray-400 transition-colors hover-yellow flex items-center gap-2"
                 >
                   <Phone className="w-4 h-4" />
-                  +351 000 000 000
+                  +351 936 677 321
                 </a>
               </li>
               <li>
@@ -120,12 +119,23 @@ export function Footer() {
             <ul className="space-y-2">
               {footerLinks.legal.map((link, index) => (
                 <li key={index}>
-                  <a 
-                    href={link.href}
-                    className="text-gray-400 transition-colors hover-yellow"
-                  >
-                    {link.label}
-                  </a>
+                  {link.action === 'privacy' ? (
+                    <a
+                      href="#privacy"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-400 transition-colors hover-yellow"
+                    >
+                      {link.label}
+                    </a>
+                  ) : (
+                    <a 
+                      href={(link as any).href ?? '#'}
+                      className="text-gray-400 transition-colors hover-yellow"
+                    >
+                      {link.label}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>
@@ -145,6 +155,7 @@ export function Footer() {
           color: #f8c101 !important;
         }
       `}</style>
+
     </footer>
   );
 }

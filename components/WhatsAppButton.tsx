@@ -1,4 +1,4 @@
-export function WhatsAppButton() {
+/*export function WhatsAppButton() {
   const handleWhatsAppClick = () => {
     // Substitua pelo número real do WhatsApp (formato: 244XXXXXXXXX)
     const phoneNumber = "244XXXXXXXXX";
@@ -12,7 +12,7 @@ export function WhatsAppButton() {
       className="fixed bottom-24 right-6 z-50 w-12 h-12 bg-[#25D366] rounded-full flex items-center justify-center shadow-lg hover:opacity-90 transition-opacity"
       aria-label="Contactar via WhatsApp"
     >
-      {/* WhatsApp SVG Icon */}
+      {/* WhatsApp SVG Icon }
       <svg 
         className="w-6 h-6 text-white" 
         fill="currentColor" 
@@ -23,4 +23,4 @@ export function WhatsAppButton() {
       </svg>
     </button>
   );
-}
+}*/
